@@ -1,5 +1,5 @@
 import Home from "./Components/Home/Home";
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MyBets from "./Components/MyBets/MyBets";
 import Accumulator from "./Components/Accumulator/Accumulator";
 import Special from "./Components/Special/Special";
@@ -8,6 +8,7 @@ import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import User from "./Components/User/User";
 import AccumulatorMain from "./Components/Accumulator_Data/AccumulatorDataMain";
+import FileUpload from "./Components/Admin/FileUpload";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/user" component={User} />
+        <Route path="/file-upload" component={FileUpload} />
         <Route path="/accumulator_data" component={AccumulatorMain} />
       </Switch>
     </Router>

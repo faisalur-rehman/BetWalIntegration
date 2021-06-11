@@ -42,3 +42,18 @@ export async function patchData(endpoint, id, data, token) {
     }
   );
 }
+export async function formPostContent(endpoint, data, token) {
+  return api.post(
+    `${endpoint}`,
+    {
+      ...data,
+    },
+    {
+      headers: {
+        authorization: `Bearer ${token}`,
+        accept: "application/json",
+        "Content-Type": `multipart/form-data`,
+      },
+    }
+  );
+}

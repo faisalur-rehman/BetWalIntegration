@@ -3,7 +3,6 @@ import "./RegisterBody.css";
 import { Link, useHistory } from "react-router-dom";
 import { postData } from "../../Api/ApiRequest";
 import axios from "axios";
-import HistoryPush from "../../HistoryPush/HistoryPush";
 
 const Register_Body = () => {
   const [name, setName] = useState("");
