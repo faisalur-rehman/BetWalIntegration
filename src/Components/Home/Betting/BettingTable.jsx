@@ -5,7 +5,6 @@ const BettingTable = (props) => {
   const [teamOdd, setTeamOdd] = useState({});
   const [isBtts, setBtts] = useState({});
   const [isOver, setOver] = useState({});
-  const [count, setCount] = useState(0);
 
   function changeTeamOdd(e, odd) {
     console.log("hello");
@@ -17,11 +16,7 @@ const BettingTable = (props) => {
   function changeOver(e, over) {
     setOver({ [over]: +e.target.value });
   }
-  function handleBetClick() {
-    console.log(teamOdd);
-    console.log(isBtts);
-    console.log(isOver);
-  }
+
   return (
     <div
       className="tab-pane fade show active"

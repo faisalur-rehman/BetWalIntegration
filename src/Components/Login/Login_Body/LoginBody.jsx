@@ -1,7 +1,6 @@
 import "./LoginBody.css";
 import React, { useState } from "react";
 import "../../../assets/bootstrap.min.css";
-import { Link, useHistory } from "react-router-dom";
 import { postData } from "../../Api/ApiRequest";
 
 const LoginBody = () => {

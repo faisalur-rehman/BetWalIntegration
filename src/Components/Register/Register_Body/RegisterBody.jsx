@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./RegisterBody.css";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { postData } from "../../Api/ApiRequest";
-import axios from "axios";
 
 const Register_Body = () => {
   const [name, setName] = useState("");

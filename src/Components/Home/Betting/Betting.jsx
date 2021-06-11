@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Betting.css";
-import {
-  Football_Matches,
-  Tennis_Matches,
-  Basketball_Matches,
-} from "../../../assets/DummyData/Matches";
+
 import BettingTable from "./BettingTable";
 import { formGetData } from "../../Api/ApiRequest";
 

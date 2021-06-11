@@ -2,7 +2,6 @@ import "../Login/Login_Body/LoginBody.css";
 import React, { useState } from "react";
 import "../../assets/bootstrap.min.css";
 import { useHistory } from "react-router-dom";
-import { postData, formPostContent } from "../Api/ApiRequest";
 import axios from "axios";
 
 const FileUpload = () => {
