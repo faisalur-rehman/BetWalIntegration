@@ -1,0 +1,218 @@
+.footer {
+  padding: 60px 0 0;
+  background-color: rgba(12, 12, 12, 0.9);
+}
+.footer .about-widget a.logo {
+  display: inline-block;
+  max-width: 150px;
+  margin-bottom: 35px;
+}
+.footer .about-widget p {
+  font-size: 16px;
+  line-height: 26px;
+  color: #fff;
+}
+.footer .about-widget .social {
+  margin-top: 32px;
+}
+.footer .about-widget .social .social-icon {
+  display: inline-block;
+  background: #ffd800;
+  color: #000;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 15px;
+  border-radius: 3px;
+  margin-right: 6px;
+  transition: all 0.3s ease-in;
+}
+.footer .about-widget .social .social-icon:hover {
+  background: #3c3c3c;
+  color: #fff;
+}
+
+.footer .about-widget .support {
+  margin-top: 30px;
+}
+.footer .about-widget .support ul {
+  display: flex;
+}
+.footer .about-widget .support ul li {
+  display: flex;
+  margin-right: 30px;
+}
+.footer .about-widget .support ul li:last-child {
+  margin-right: 0;
+}
+.footer .about-widget .support ul li span {
+  display: block;
+}
+.footer .about-widget .support ul li span img {
+  width: 30px;
+  margin-right: 15px;
+}
+.footer .about-widget .support ul li span.text span.title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+.footer .about-widget .support ul li span.text span.descr {
+  color: #fff;
+  font-size: 14px;
+  opacity: 1;
+  font-weight: bold;
+}
+.footer .useful-links h3 {
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.footer .useful-links ul li a {
+  display: inline-block;
+  font-size: 15px;
+  color: #fff;
+  padding: 7px 0;
+  position: relative;
+  padding-left: 20px;
+  text-transform: uppercase;
+}
+.footer .useful-links ul li a:hover {
+  color: #ffd800;
+}
+.footer .useful-links ul li a:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  margin-top: -4px;
+  width: 6px;
+  height: 6px;
+  background: #ffd800;
+  border-radius: 50%;
+}
+.footer .useful-links ul li a:before {
+  position: absolute;
+  content: "";
+  left: 20px;
+  bottom: 8px;
+  width: 0;
+  height: 1px;
+  background: #ffd800;
+  transition: all 0.3s ease-in;
+}
+.footer .useful-links ul li a:hover:before {
+  width: 100%;
+}
+
+.footer .payment-method {
+  margin-top: 60px;
+  position: relative;
+}
+.footer .payment-method .all-method {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px 0 10px;
+  border-top: 1px solid #ffd800;
+}
+.footer .payment-method .all-method h1 {
+  font-size: 50px;
+  color: #fff;
+}
+
+/*Footer End*/
+
+/*Responsive Desing*/
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* footer */
+  .footer .about-widget {
+    margin-bottom: 30px;
+  }
+  .footer .useful-links {
+    margin-bottom: 30px;
+  }
+  .footer {
+    padding: 80px 0 0px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* footer */
+  .footer .about-widget {
+    margin-bottom: 30px;
+  }
+  .footer .useful-links {
+    margin-bottom: 30px;
+  }
+  .footer {
+    padding: 20px 10px;
+  }
+  .footer .payment-method .all-method h1 {
+    font-size: 35px;
+    color: #fff;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 575px) {
+  /* footer */
+  .footer .about-widget {
+    margin-bottom: 30px;
+  }
+  .footer .useful-links {
+    margin-bottom: 30px;
+  }
+  .footer .payment-method .all-method h1 {
+    font-size: 25px;
+    color: #fff;
+  }
+  .footer {
+    padding: 20px 10px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  /* footer */
+  .footer .payment-method .all-method h1 {
+    font-size: 25px;
+    color: #fff;
+  }
+  .footer .about-widget {
+    margin-bottom: 30px;
+  }
+  .footer .useful-links {
+    margin-bottom: 30px;
+  }
+  .footer {
+    padding: 20px 10px;
+  }
+}
+@media only screen and (min-width: 280px) and (max-width: 360px) {
+  .footer .about-widget .social .git {
+    margin-top: 10px;
+  }
+  .footer .payment-method .all-method h1 {
+    font-size: 20px;
+    color: #fff;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 350px) {
+  .footer .about-widget .social .git {
+    margin-top: 10px;
+  }
+  .footer .about-widget .support ul {
+    display: block;
+  }
+  .footer .about-widget .support ul li {
+    margin-bottom: 20px;
+  }
+  .footer .about-widget .support ul li span {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .footer .payment-method .all-method .single-method {
+    width: 120px;
+    margin: 0 auto;
+  }
+}

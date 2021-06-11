@@ -1,0 +1,84 @@
+/*Latest Results -- In Play--Start*/
+
+.latest-result {
+  padding: 40px 0;
+  background-image: linear-gradient(#3c3c3c, rgb(129, 128, 128));
+}
+
+.latest-result .section-title {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.latest-result .section-title h2 {
+  font-size: 45px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ffd800;
+  margin-bottom: 20px;
+}
+.latest-result .row {
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+/*Scroll Bar*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #222222;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffd800;
+  border-radius: 5px;
+}
+
+.latest-result .single-match {
+  box-shadow: 0px 5px 10px 0px rgba(255, 255, 255, 0.09);
+  border-radius: 10px;
+  width: 60%;
+  margin: 40px auto;
+}
+.latest-result .single-match:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 4px 5px 0px rgba(248, 248, 35, 0.75);
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .latest-result .single-match {
+    width: 60%;
+    margin: 40px auto;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .latest-result .single-match {
+    width: 65%;
+    margin: 35px auto;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .latest-result .single-match {
+    width: 70%;
+    margin: 30px auto;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 575px) {
+  .latest-result .single-match {
+    width: 80%;
+    margin: 25px auto;
+  }
+}
+
+@media only screen and (min-width: 280px) and (max-width: 479px) {
+  .latest-result .single-match {
+    width: 90%;
+    margin: 20px auto;
+  }
+}

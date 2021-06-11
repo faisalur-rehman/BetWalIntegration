@@ -1,0 +1,207 @@
+/*Banner*/
+.banner {
+  background: url("../../../assets/img/banner-2.jpg") bottom center no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+}
+.banner:after {
+  background: rgb(14, 13, 13);
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+  z-index: -1;
+}
+.banner .banner-content {
+  padding: 100px 0;
+}
+.banner .banner-content h1 {
+  color: #ffd800;
+  font-size: 60px;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.banner .banner-content h4 {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+  font-size: 24px;
+}
+.banner .banner-content p {
+  color: #fff;
+  font-size: 16px;
+  line-height: 27px;
+  max-width: 650px;
+}
+.banner .banner-content .banner-img {
+  margin-right: -50px;
+}
+
+/*Responsive*/
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .banner .banner-content {
+    padding: 90px 0;
+  }
+  .banner .banner-content h1 {
+    color: #ffd800;
+    font-size: 60px;
+    line-height: 60px;
+  }
+  .banner .banner-content h4 {
+    margin-bottom: 16px;
+  }
+  .banner .banner-img {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* banner */
+  .banner .banner-content {
+    padding: 70px 0;
+  }
+  .banner .banner-content h1,
+  .banner.banner-2 .text-content h1 {
+    font-size: 45px;
+    line-height: 42px;
+    margin-top: -7px;
+  }
+  .banner.banner-2 .text-content {
+    padding: 0;
+    background: none;
+  }
+  .banner-slider .owl-nav,
+  .banner.banner-2 .text-content:after {
+    display: none;
+  }
+  .banner .banner-content h4 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 1rem;
+  }
+  .banner .banner-content p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .banner-img {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* banner */
+  .banner .banner-content {
+    padding: 60px 0;
+  }
+  .banner .banner-content h1,
+  .banner.banner-2 .text-content h1 {
+    font-size: 35px;
+    line-height: 38px;
+    margin-top: -7px;
+  }
+  .banner.banner-2 .text-content {
+    padding: 0;
+    background: none;
+  }
+  .banner-slider .owl-nav,
+  .banner.banner-2 .text-content:after {
+    display: none;
+  }
+  .banner .banner-content h4 {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 0.7rem;
+  }
+  .banner .banner-content p {
+    font-size: 1rem;
+    line-height: 24px;
+  }
+  .banner-img {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 575px) {
+  /* banner */
+  .banner .banner-content {
+    padding: 50px 0;
+  }
+  .banner .banner-content h1,
+  .banner.banner-2 .text-content h1 {
+    font-size: 25px;
+    line-height: 38px;
+    margin-top: -7px;
+  }
+  .banner.banner-2 .text-content {
+    padding: 0;
+    background: none;
+  }
+  .banner-slider .owl-nav,
+  .banner.banner-2 .text-content:after {
+    display: none;
+  }
+  .banner .banner-content h4 {
+    font-size: 1rem;
+    line-height: 26px;
+    margin-bottom: 14px;
+  }
+  .banner .banner-content p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .banner-img {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 280px) and (max-width: 479px) {
+  .banner .banner-content {
+    padding: 40px 0;
+  }
+  /* banner */
+  .banner .banner-content h1,
+  .banner.banner-2 .text-content h1 {
+    font-size: 1rem;
+    line-height: 38px;
+    margin-top: -7px;
+  }
+  .banner.banner-2 .text-content {
+    padding: 0;
+    background: none;
+  }
+  .banner-slider .owl-nav,
+  .banner.banner-2 .text-content:after {
+    display: none;
+  }
+  .banner .banner-content h4 {
+    font-size: 0.6rem;
+    line-height: 26px;
+    margin-bottom: 0.5rem;
+  }
+  .banner .banner-content p {
+    font-size: 12px;
+    line-height: 24px;
+  }
+  .banner-img {
+    display: none;
+  }
+}
+@media only screen and (min-width: 280px) and (max-width: 350px) {
+  .banner .banner-content .banner-button ul li a {
+    display: block;
+  }
+  .banner .banner-content .banner-button ul li {
+    width: 100%;
+    display: block;
+  }
+  .banner .banner-content .banner-button ul li:first-child {
+    margin-bottom: 0.5rem;
+  }
+}

@@ -1,0 +1,53 @@
+.accumulator .accumulator-top {
+  width: 50%;
+  margin: 10px;
+}
+.accumulator-top .btn {
+  background-color: #ffd800;
+  color: #2a2a2a;
+  border: none;
+  outline: none;
+}
+.accumulator-top .btn:hover {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+.accumulator h1,
+h5 {
+  color: #ffd800;
+}
+.accumulator .card a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.accumulator .card .btn {
+  text-align: center;
+  background-color: #ffd800;
+  color: #2a2a2a;
+  border: none;
+  outline: none;
+}
+.accumulator .card .btn:hover {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+.form-group label {
+  color: #fff;
+}
+
+.accumulator {
+  background-image: linear-gradient(#3c3c3c, rgb(129, 128, 128));
+}
+
+.card-title{
+  text-align: center
+}
+
+.form-group {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,65 @@
+.payment-history {
+  background-image: linear-gradient(#3c3c3c, rgb(129, 128, 128));
+  margin-bottom: 0px;
+}
+.payment-history .transaction-area .table {
+  margin-bottom: 20px;
+}
+.payment-history .transaction-area .table thead {
+  background: #ffd800;
+}
+.payment-history .transaction-area .table thead th {
+  border: none;
+  height: 60px;
+  vertical-align: middle;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2d2d2d;
+  text-align: center;
+}
+.payment-history .transaction-area .table thead th:first-child {
+  padding-left: 38px;
+  text-align: left;
+}
+.payment-history .transaction-area .table thead td {
+  padding: 15px 0;
+}
+.payment-history .transaction-area .table tbody {
+  border-left: 1px solid #ffd800;
+  border-right: 1px solid #ffd800;
+}
+.payment-history .transaction-area .table tbody tr {
+  border-bottom: 1px solid #ffd800;
+}
+.payment-history .transaction-area .table tbody tr th {
+  border-top: none;
+  color: white;
+  padding-left: 40px;
+  padding: 20px 0 20px 30px;
+  text-transform: capitalize;
+  font-weight: 500;
+  vertical-align: middle;
+  height: 60px;
+}
+.payment-history .transaction-area .table tbody tr td {
+  padding: 0;
+  border-top: none;
+  font-size: 14px;
+  height: 60px;
+  vertical-align: middle;
+  text-align: center;
+  color: #fff;
+}
+.table>:not(caption)>*>*{
+  border-bottom: none;
+}
+
+@media only screen and (min-width: 280px) and (max-width: 600px) {
+  .payment-history {
+    overflow-x: scroll !important;
+  }
+  .payment-history table {
+    font-size: 12px;
+    font-weight: normal;
+  }
+}

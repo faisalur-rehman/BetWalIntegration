@@ -1,0 +1,67 @@
+.myBets {
+  background: #212529;
+  opacity: 0.9;
+}
+.myBets h3 {
+  color: #ffd800;
+}
+.myBets table tbody tr,
+.myBets table thead tr {
+  border: none;
+  padding: 20px 30px;
+  font-size: 14px;
+  color: #fff;
+  border: 2px solid #2a2a2a;
+}
+.myBets table tbody th,
+.myBets table thead th {
+  font-size: 14px;
+  color: #fff;
+  border: 2px solid #2a2a2a;
+}
+
+.myBets table {
+  background-color: #3c3c3c;
+}
+.myBets table tr .btn {
+  background-color: #ffd800;
+  color: #2a2a2a;
+}
+.myBets table tr .btn:hover {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .myBets .table-wrap {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .myBets .table-wrap {
+    overflow-x: scroll;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .myBets .table-wrap {
+    overflow-x: scroll;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 575px) {
+  .myBets .table-wrap {
+    overflow-x: scroll;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .myBets .table-wrap {
+    overflow-x: scroll;
+  }
+}
+
+@media only screen and (min-width: 280px) and (max-width: 350px) {
+  .myBets .table-wrap {
+    overflow-x: scroll;
+  }
+}

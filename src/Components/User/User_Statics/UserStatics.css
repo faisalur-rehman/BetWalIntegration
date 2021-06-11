@@ -1,0 +1,68 @@
+.player-statics .single-static {
+  border-radius: 5px;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 30px 0;
+  box-shadow: 0 0px 10px 0 rgba(41, 41, 41, 0.5);
+  margin-bottom: 30px;
+  text-align: center;
+}
+.player-statics .single-static:hover {
+  box-shadow: 0px 0px 20px #ffd800;
+  z-index: 2;
+  transition: all 200ms ease-in;
+  transform: scale(1.1);
+}
+.player-statics .single-static .part-icon {
+  height: 70px;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 13px;
+}
+.player-statics .single-static .part-icon:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffd800;
+  z-index: -2;
+  opacity: 1;
+}
+.player-statics .single-static .part-icon:before {
+  position: absolute;
+  content: "";
+  left: 4px;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  background: #fff;
+  z-index: -1;
+  border-radius: 50%;
+}
+.player-statics .single-static .part-icon img {
+  height: 100%;
+}
+.player-statics .single-static .part-text span {
+  display: block;
+}
+.player-statics .single-static .part-text span.number {
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 500;
+  background: #ffd800;
+  color: #2d2d2d;
+  margin-bottom: 3px;
+}
+.player-statics .single-static .part-text span.title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 28px;
+  text-transform: uppercase;
+}

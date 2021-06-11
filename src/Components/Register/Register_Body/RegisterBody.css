@@ -1,0 +1,283 @@
+.register {
+  padding: 120px 0;
+  background-image: linear-gradient(#3c3c3c, rgb(129, 128, 128));
+}
+.register .sign-up-step {
+  background-color: #3c3c3c;
+  box-shadow: 0px 0px 11px 7px rgba(56, 56, 56, 0.08);
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.register .sign-up-step ul {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+.register .sign-up-step ul li {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 30px;
+  border-right: 1px solid rgba(168, 168, 168, 0.3);
+  border-top: 1px solid rgba(161, 161, 161, 0.2);
+  border-bottom: 1px solid rgba(173, 173, 173, 0.2);
+  height: 50px;
+  line-height: 48px;
+  border-radius: 0 50px 50px 0;
+  margin-left: -25px;
+  padding-left: 45px;
+  align-items: baseline;
+  transition: all 0.3s ease-in;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+.register .sign-up-step ul li:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #ffd800;
+  z-index: -1;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  border-radius: 0 50px 50px 0;
+}
+.register .sign-up-step ul li.active {
+  border-color: #ffd800;
+}
+.register .sign-up-step ul li.active:after {
+  width: 100%;
+}
+.register .sign-up-step ul li.active span.text,
+.register .sign-up-step ul li.active span.icon {
+  color: #3c3c3c;
+}
+.register .sign-up-step ul li span.text,
+.register .sign-up-step ul li span.icon {
+  color: #fff;
+}
+.register .sign-up-step ul li:first-child {
+  padding-left: 25px;
+  z-index: 5;
+  border-radius: 10px 50px 50px 10px;
+  border-left: 1px solid rgba(56, 56, 56, 0.6);
+  margin-left: 0;
+}
+.register .sign-up-step ul li:nth-child(2) {
+  z-index: 4;
+}
+.register .sign-up-step ul li:nth-child(3) {
+  z-index: 3;
+}
+.register .sign-up-step ul li:last-child {
+  z-index: 2;
+}
+.register .sign-up-step ul li:last-child.active:after {
+  background: #ffd800;
+}
+.register .sign-up-step ul li span.icon {
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 1);
+}
+.register .sign-up-step ul li span.icon svg {
+  height: 22px;
+  width: auto;
+  font-size: auto;
+}
+.register .sign-up-step ul li span.text {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+}
+.register .all-form {
+  box-shadow: 0px 0px 11px 7px rgba(20, 19, 19, 0.2);
+  border-radius: 10px;
+  padding: 30px;
+  position: relative;
+}
+.register .single-form {
+  display: none;
+}
+.register .single-form#first-step {
+  display: block;
+}
+.register .single-form form div {
+  position: relative;
+}
+.register .single-form form label {
+  display: block;
+  /* padding-bottom: 6px; */
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 5px;
+  /* padding-top: 6px; */
+  margin-bottom: 0;
+  /* position: absolute; */
+  /* bottom: 7px;
+    left: 30px; */
+  transition: all 0.3s ease-in;
+}
+/* .register .single-form form label.active {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 1;
+    bottom: 50px;
+    left: 0;
+    color: #a8a803;
+  } */
+.register .single-form form input {
+  width: 100%;
+  height: 50px;
+  padding: 0 30px;
+  margin-top: 5px;
+  border: 1px solid rgba(36, 34, 34, 0.2);
+  border-radius: 5px;
+  transition: all 0.3s ease-in;
+}
+.register .single-form form input:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.register .single-form p {
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.6;
+  margin-bottom: 0;
+  padding-top: 26px;
+}
+.register .single-form .next {
+  margin-top: 25px;
+  border: none;
+  background: #ffd800;
+  height: 50px;
+  width: 150px;
+  color: #2d2d2d;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+.register .single-form .next:hover {
+  background: #fff;
+}
+.register .single-form .next.disabled {
+  cursor: not-allowed;
+  background: #fff;
+}
+.register .final-step {
+  text-align: center;
+  display: none;
+  padding: 120px 0;
+  border: 1px solid rgba(56, 56, 56, 0.2);
+  border-radius: 5px;
+}
+.register .final-step .text {
+  display: block;
+  color: #ffd800;
+  font-size: 34px;
+  margin-top: 17px;
+  margin-bottom: -13px;
+}
+.register .final-step svg {
+  width: 100px;
+  display: inline-block;
+}
+.register .final-step .path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+.register .final-step .path.circle {
+  animation: dash 0.9s ease-in-out;
+}
+.register .final-step .path.line {
+  stroke-dashoffset: 1000;
+  animation: dash 0.9s 0.35s ease-in-out forwards;
+}
+.register .final-step .path.check {
+  stroke-dashoffset: -100;
+  animation: dash-check 0.9s 0.35s ease-in-out forwards;
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+@media only screen and (min-width: 280px) and (max-width: 666px) {
+  .register .sign-up-step ul li span.text {
+    display: none;
+  }
+  .register .sign-up-step ul li span.icon {
+    margin-right: 0;
+  }
+  .register .sign-up-step ul {
+    display: flex;
+  }
+  .register .sign-up-step ul li {
+    padding: 0;
+    flex: 1;
+    margin-left: 0;
+    border-radius: 0;
+    justify-content: center;
+  }
+  .register .sign-up-step ul li:first-child {
+    border-radius: 0;
+    padding-left: 0;
+  }
+  .register .sign-up-step ul li:after {
+    border-radius: 0;
+  }
+}
+
+@media only screen and (min-width: 280px) and (max-width: 991px) {
+  .register {
+    padding: 60px 0;
+  }
+}
+
+.show_form {
+  display: block !important;
+}
+.hide_form {
+  display: none !important;
+}

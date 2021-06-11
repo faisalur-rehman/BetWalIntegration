@@ -1,0 +1,150 @@
+/*Standing*/
+
+.standing {
+  padding: 120px 0 117px;
+  background-image: linear-gradient(#3c3c3c, rgb(129, 128, 128));
+}
+.standing .standing-team-list {
+  box-shadow: 0px 2px 7px 0px rgba(217, 255, 1, 0.15);
+  padding: 30px 30px 10px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+.standing .standing-team-list .result-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 0;
+  position: relative;
+  padding-left: 30px;
+  color: #ffd800;
+  text-transform: uppercase;
+}
+.standing .standing-team-list .result-title:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: #ffd800;
+  border-radius: 50%;
+}
+.standing .standing-team-list .table {
+  border-collapse: separate;
+  border-spacing: 0 20px;
+}
+.standing .standing-team-list .table thead tr {
+  box-shadow: 0px 2px 7px 0px rgba(255, 255, 255, 0.08);
+  background: #383838;
+}
+.standing .standing-team-list .table thead tr th {
+  border: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #3c3c3c;
+  height: 60px;
+  vertical-align: middle;
+}
+.standing .standing-team-list .table thead tr th:first-child {
+  padding-left: 30px;
+}
+.standing .standing-team-list .table tbody tr {
+  -webkit-box-shadow: 0px 2px 7px 0px rgba(42, 42, 42, 0.08);
+  box-shadow: 0px 2px 7px 0px rgba(42, 42, 42, 0.08);
+  background: rgb(117, 116, 116);
+}
+.standing .standing-team-list .table tbody tr th,
+.standing .standing-team-list .table tbody tr td {
+  border: none;
+  vertical-align: middle;
+  height: 80px;
+}
+.standing .standing-team-list .table tbody tr th {
+  font-size: 30px;
+  font-weight: 400;
+  color: #fff;
+  font-style: italic;
+  padding-left: 30px;
+}
+.standing .standing-team-list .table tbody tr td {
+  color: #fff;
+  font-weight: 500;
+}
+.standing .standing-team-list .table tbody tr td .single-team {
+  display: block;
+}
+.standing .standing-team-list .table tbody tr td .single-team span {
+  display: inline-block;
+}
+.standing .standing-team-list .table tbody tr td .single-team span.logo {
+  height: 45px;
+  margin-right: 15px;
+  color: #fff;
+}
+.standing .standing-team-list .table tbody tr td .single-team span.logo img {
+  height: 100%;
+  width: auto;
+}
+.standing .standing-team-list .table tbody tr td .single-team span.text {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #ffffff;
+}
+.standing .standing-team-list .table .text-right a,
+.standing .standing-team-list .table .text-center a {
+  color: #fff !important ;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .standing .standing-team-list {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 575px) {
+  .standing .standing-team-list {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .standing .standing-team-list {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media only screen and (min-width: 280px) and (max-width: 350px) {
+  .standing .standing-team-list {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media only screen and (min-width: 280px) and (max-width: 767px) {
+  .standing {
+    padding: 60px 0 57px;
+  }
+  .standing .filter-menu .form-group {
+    margin-bottom: 10px;
+  }
+  .standing .standing-team-list {
+    width: 500px;
+    margin-bottom: 8px;
+    margin-top: 4px;
+    margin-left: 5px;
+  }
+  .standing .standing-list-cover {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .standing .filter-menu {
+    margin-bottom: 30px;
+  }
+}
