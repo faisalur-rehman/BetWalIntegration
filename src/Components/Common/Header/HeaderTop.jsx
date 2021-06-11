@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 const HeaderTop = () => {
@@ -33,16 +33,15 @@ const HeaderTop = () => {
                   <span className="icon">
                     <i className="fa fa-calendar-alt"></i>
                   </span>
-                  <span className="text">
-                    {date}
-                  </span>
+                  <span className="text">{date}</span>
                 </li>
                 <li>
                   <span className="icon">
                     <i className="fa fa-clock"></i>
                   </span>
                   <span className="text clocks">
-                    <span id="hours">{hour}</span>:<span id="minutes">{minute}</span>:
+                    <span id="hours">{hour}</span>:
+                    <span id="minutes">{minute}</span>:
                     <span id="seconds">{sec}</span>
                   </span>
                 </li>
@@ -55,7 +54,7 @@ const HeaderTop = () => {
                 <li>
                   <Link className="link" to="">
                     <i className="fal fa-user-circle fa-1x"></i>
-                    Hi, John Doe
+                    Hi, {sessionStorage.getItem("name")}
                   </Link>
                 </li>
               </ul>

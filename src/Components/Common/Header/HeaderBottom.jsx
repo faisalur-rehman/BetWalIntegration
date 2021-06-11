@@ -18,6 +18,10 @@ const HeaderBottom = () => {
   //     header.classList.remove("sticky");
   //   }
   // };
+  function handleSession() {
+    sessionStorage.getItem("name") && sessionStorage.removeItem("name");
+    sessionStorage.getItem("token") && sessionStorage.removeItem("token");
+  }
   return (
     <div id="navbar" className="header-bottom">
       <div className="container">
@@ -97,8 +101,8 @@ const HeaderBottom = () => {
 
                     {sessionStorage.getItem("token") && (
                       <li className="nav-item">
-                        <Link className="nav-link" to="login">
-                          Logout
+                        <Link className="nav-link" to="/login">
+                          <span onClick={handleSession}>Logout</span>
                         </Link>
                       </li>
                     )}

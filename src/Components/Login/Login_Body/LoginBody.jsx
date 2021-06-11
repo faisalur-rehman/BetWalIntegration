@@ -1,5 +1,5 @@
 import "./LoginBody.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../../../assets/bootstrap.min.css";
 import { Link, useHistory } from "react-router-dom";
 import { postData } from "../../Api/ApiRequest";
@@ -10,11 +10,6 @@ const LoginBody = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [clicked, setClicked] = useState(false);
-
-  useEffect(() => {
-    sessionStorage.getItem("name") && sessionStorage.removeItem("name");
-    sessionStorage.getItem("token") && sessionStorage.removeItem("token");
-  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
