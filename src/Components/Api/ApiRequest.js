@@ -18,7 +18,7 @@ export async function formPostData(endpoint, data, token) {
     },
     {
       headers: {
-        "x-auth-token": token,
+        authorization: `Bearer ${token}`,
       },
     }
   );

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./BettingModal.css";
 import vs_icon from "../../../../assets/img/vs-icon.png";
+import { formPostData } from "../../../Api/ApiRequest";
 
 const Betting_Model = (props) => {
   const [bet_count, set_bet_count] = useState(0);
@@ -19,6 +20,24 @@ const Betting_Model = (props) => {
     props.onHideModal();
   };
 
+  async function handleBet() {
+    try {
+      const { data } = await formPostData(
+        "/user-betslip/add",
+        {
+          ...props.betData,
+          stake: bet_count,
+        },
+        sessionStorage.getItem("token")
+      );
+      console.log(data);
+    } catch (error) {
+      console.log(error.response);
+    }
+  }
+
+  console.log(props);
+
   return (
     <div class={props.bet_modal_bg}>
       <div class={props.bet_modal}>
@@ -34,15 +53,19 @@ const Betting_Model = (props) => {
             <span class="altv-1">{props.betData.bet_value}</span>
           </div>
           <div class="bet-descr">
-            <span class="team-name team-name-1st">Arsenal</span>
+            <span class="team-name team-name-1st">
+              {props.matchData.homeTeam}
+            </span>
             <span class="img-ic">
               <img src={vs_icon} alt="" />
             </span>
-            <span class="team-name team-name-2nd">everton</span>
-            <div class="team-score">
+            <span class="team-name team-name-2nd">
+              {props.matchData.awayTeam}
+            </span>
+            {/* <div class="team-score">
               [<span class="team-first-score">2</span>:
               <span class="team-second-score">4</span>] 1X2 Live Prediction
-            </div>
+            </div> */}
           </div>
           <div class="ctrl-buttons">
             <div class="butto-shadow">
@@ -69,16 +92,16 @@ const Betting_Model = (props) => {
                 <span class="altv-3">{bet_count}</span>
               </li>
               <li>
-                <span class="number-of-bet">Total Est. Returns :</span>
+                {/* <span class="number-of-bet">Total Est. Returns :</span>
                 <span class="number-of-bet-count">
                   {(bet_count * props.betData.bet_value).toFixed(2)}
-                </span>
+                </span> */}
               </li>
             </ul>
           </div>
         </div>
         <div class="bet-footer">
-          <button>Bet Now</button>
+          <button onClick={handleBet}>Bet Now</button>
         </div>
       </div>
     </div>
