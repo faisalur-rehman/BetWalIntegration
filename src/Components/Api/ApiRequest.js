@@ -24,10 +24,25 @@ export async function formPostData(endpoint, data, token) {
   );
 }
 
+// export async function GetData(endpoint, token) {
+//   console.log("id", token);
+//   return api.get(
+//     `${endpoint}`,
+//     {
+//       matchId: "60c315403a69fd37acf7edb2",
+//     },
+//     {
+//       headers: {
+//         authorization: `Bearer ${token}`,
+//       },
+//     }
+//   );
+// }
+
 export async function formGetData(endpoint, token) {
   return api.get(`${endpoint}`, {
     headers: {
-      "x-auth-token": token,
+      authorization: `Bearer ${token}`,
     },
   });
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { formPostData, formGetData } from "../Api/ApiRequest";
+import { formPostData, formGetData } from "../../Api/ApiRequest";
 import "./MatchResult.css";
-import MatchResultForm from "./MatchResult/MatchResultForm";
+import MatchResultForm from "./MatchResultForm";
 
 const MatchResult = () => {
   const [teamWon, setTeamWon] = useState("");
@@ -10,6 +10,7 @@ const MatchResult = () => {
   const [moreThanThree, setMoreThanThree] = useState();
   const [matches, setMatches] = useState([]);
   const [matchId, setMatchId] = useState("");
+  const [error, setError] = useState();
 
   useEffect(() => {
     async function fetchData() {
@@ -33,16 +34,18 @@ const MatchResult = () => {
           matchId,
           isHomeTeamWon: teamWon === "home",
           isAwayTeamWon: teamWon === "away",
-          isDraw: matchDrawn === "yes",
+          isDraw: teamWon === "draw",
           isBtts: btts === "yes",
           isOver25: moreThanThree === "yes",
         },
         sessionStorage.getItem("token")
       );
+      setError("Updated successfully");
+
       console.log(data);
     } catch (err) {
-      console.log("helo");
-      console.log(err.response);
+      console.log(err.response.data);
+      setError(err.response.data.message);
     }
   }
   return (
@@ -54,6 +57,7 @@ const MatchResult = () => {
       setMoreThanThree={setMoreThanThree}
       matches={matches}
       setMatchId={setMatchId}
+      error={error}
     />
   );
 };

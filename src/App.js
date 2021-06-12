@@ -9,7 +9,8 @@ import Register from "./Components/Register/Register";
 import User from "./Components/User/User";
 import AccumulatorMain from "./Components/Accumulator_Data/AccumulatorDataMain";
 import FileUpload from "./Components/Admin/FileUpload";
-import MatchResult from "./Components/Admin/MatchResult";
+import MatchResult from "./Components/Admin/MatchResult/MatchResult";
+import ViewMatchDetail from "./Components/ViewMatchDetail/ViewMatchDetail";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/user" component={User} />
+        <Route path="/view-result" component={ViewMatchDetail} />
         <Route path="/accumulator_data" component={AccumulatorMain} />
 
         {

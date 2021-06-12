@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const MatchResultForm = ({
   handleSubmit,
@@ -8,6 +8,7 @@ const MatchResultForm = ({
   setMoreThanThree,
   matches,
   setMatchId,
+  error,
 }) => {
   return (
     <div class="login">
@@ -28,37 +29,10 @@ const MatchResultForm = ({
                   {matches.map((match, index) => (
                     <option value={match._id}>Match {index + 1}</option>
                   ))}
-                  {/* <option value="saab">Saab 95</option>
-                  <option value="mercedes">Mercedes SLK</option>
-                  <option value="audi">Audi TT</option> */}
                 </select>
                 <br />
                 <br />
-                <label className="label">Was match drawn?</label>
-                <br />
-                <label>
-                  <input
-                    style={{ width: "fit-content", height: "10px" }}
-                    type="radio"
-                    name="draw"
-                    value="yes"
-                    onChange={(e) => setMatchDrawn(e.target.value)}
-                    required
-                  />
-                  <span style={{ color: "white", padding: 5 }}>Yes</span>
-                </label>
-                <br />
-                <label className="label">
-                  <input
-                    style={{ width: "fit-content", height: "10px" }}
-                    type="radio"
-                    name="draw"
-                    value="no"
-                    onChange={(e) => setMatchDrawn(e.target.value)}
-                  />
-                  <span style={{ color: "white", padding: 5 }}>No</span>
-                </label>
-                <br />
+
                 <label className="label">Which team won?</label>
                 <br />
                 <label className="label">
@@ -82,6 +56,19 @@ const MatchResultForm = ({
                     onChange={(e) => setTeamWon(e.target.value)}
                   />
                   <span style={{ padding: 5 }}>Away Team</span>
+                </label>
+
+                <br />
+                <label className="label">
+                  <input
+                    style={{ width: "fit-content", height: "10px" }}
+                    type="radio"
+                    name="team"
+                    value="draw"
+                    onChange={(e) => setTeamWon(e.target.value)}
+                    required
+                  />
+                  <span style={{ padding: 5 }}>Draw</span>
                 </label>
                 <br />
                 <label className="label">Did both team score?</label>
@@ -136,6 +123,9 @@ const MatchResultForm = ({
                   <span style={{ color: "white", padding: 5 }}>No</span>
                 </label>
                 <br />
+
+                <p style={{ color: "red" }}>{error}</p>
+
                 <button type="submit" class="btn btn-block">
                   Update Match Results
                 </button>
