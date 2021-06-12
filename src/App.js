@@ -9,6 +9,7 @@ import Register from "./Components/Register/Register";
 import User from "./Components/User/User";
 import AccumulatorMain from "./Components/Accumulator_Data/AccumulatorDataMain";
 import FileUpload from "./Components/Admin/FileUpload";
+import MatchResult from "./Components/Admin/MatchResult";
 
 function App() {
   return (
@@ -22,8 +23,13 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/user" component={User} />
-        <Route path="/file-upload" component={FileUpload} />
         <Route path="/accumulator_data" component={AccumulatorMain} />
+
+        {
+          // admin routes
+        }
+        <Route path="/file-upload" component={FileUpload} />
+        <Route path="/match-results" component={MatchResult} />
       </Switch>
     </Router>
     // <div className="App">

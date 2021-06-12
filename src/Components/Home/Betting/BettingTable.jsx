@@ -7,7 +7,6 @@ const BettingTable = (props) => {
   const [isOver, setOver] = useState({});
 
   function changeTeamOdd(e, odd) {
-    console.log("hello");
     setTeamOdd({ [odd]: +e.target.value });
   }
   function changeBtts(e, btts) {
