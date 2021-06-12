@@ -4,20 +4,6 @@ import logo from "../../../assets/img/logo.png";
 import { Link } from "react-router-dom";
 
 const HeaderBottom = () => {
-  // window.onscroll = function () {
-  //   myFunction();
-  // };
-
-  // var header = document.getElementById('navbar');
-  // var sticky = header.offsetTop;
-
-  // const myFunction = () => {
-  //   if (window.pageYOffset > sticky) {
-  //     header.classList.add("sticky");
-  //   } else {
-  //     header.classList.remove("sticky");
-  //   }
-  // };
   function handleSession() {
     sessionStorage.getItem("name") && sessionStorage.removeItem("name");
     sessionStorage.getItem("token") && sessionStorage.removeItem("token");
@@ -76,6 +62,11 @@ const HeaderBottom = () => {
                     <li className="nav-item">
                       <Link className="nav-link" to="/special">
                         Specials
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/view-result">
+                        View Match Result
                       </Link>
                     </li>
 
