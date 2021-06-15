@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: "https://betval-app.herokuapp.com/",
 });
 
 export async function postData(endpoint, data) {
@@ -23,21 +23,6 @@ export async function formPostData(endpoint, data, token) {
     }
   );
 }
-
-// export async function GetData(endpoint, token) {
-//   console.log("id", token);
-//   return api.get(
-//     `${endpoint}`,
-//     {
-//       matchId: "60c315403a69fd37acf7edb2",
-//     },
-//     {
-//       headers: {
-//         authorization: `Bearer ${token}`,
-//       },
-//     }
-//   );
-// }
 
 export async function formGetData(endpoint, token) {
   return api.get(`${endpoint}`, {
