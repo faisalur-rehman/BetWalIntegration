@@ -10,14 +10,18 @@ const LoginBody = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [clicked, setClicked] = useState(false);
+  const [admin, setAdmin] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const { data } = await postData("/user/login", { email, password });
       console.log(data);
+      setAdmin(data.isAdmin);
       sessionStorage.setItem("token", data.token);
       sessionStorage.setItem("name", data.name);
+      sessionStorage.setItem("isAdmin", data.isAdmin ? "admin" : "user");
+      sessionStorage.setItem("reloadCount", 1);
       setError("");
       setClicked(true);
     } catch (error) {
@@ -54,7 +58,8 @@ const LoginBody = () => {
                   Login
                 </button>
               </form>
-              {!error && clicked && history.push("/")}
+              {!error && clicked && !admin && history.push("/")}
+              {!error && clicked && admin && history.push("/admin")}
             </div>
           </div>
         </div>

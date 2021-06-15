@@ -1,9 +1,9 @@
 import React from "react";
-import "./Header.css";
-import logo from "../../../assets/img/logo.png";
+import "../Common/Header/Header.css";
+import logo from "../../assets/img/logo.png";
 import { Link } from "react-router-dom";
 
-const HeaderBottom = () => {
+const AdminHeaderBottom = () => {
   function handleSession() {
     sessionStorage.getItem("name") && sessionStorage.removeItem("name");
     sessionStorage.getItem("token") && sessionStorage.removeItem("token");
@@ -46,37 +46,34 @@ const HeaderBottom = () => {
                 >
                   <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                      <Link className="nav-link" to="/">
+                      <Link className="nav-link" to="/admin">
                         Home
                       </Link>
                     </li>
 
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/my_bets">
-                        My Bets
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/accumulator">
-                        Accumulator
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/special">
-                        Specials
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/view-result">
-                        Match Result
-                      </Link>
-                    </li>
+                    <>
+                      <li className="nav-item">
+                        <Link className="nav-link" to="add-balance">
+                          Add Balance
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link className="nav-link" to="file-upload">
+                          File Upload
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link className="nav-link" to="winners">
+                          Winners
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link className="nav-link" to="match-results">
+                          Match Results
+                        </Link>
+                      </li>
+                    </>
 
-                    <li className="nav-item">
-                      <Link className="nav-link" to="football">
-                        Football
-                      </Link>
-                    </li>
                     {!sessionStorage.getItem("token") && (
                       <>
                         <li className="nav-item">
@@ -110,4 +107,4 @@ const HeaderBottom = () => {
   );
 };
 
-export default HeaderBottom;
+export default AdminHeaderBottom;

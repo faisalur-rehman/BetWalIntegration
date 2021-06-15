@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import Banner from "./Banner/Banner";
-import Batting from "./Betting/Betting";
+import Banner from "../Home/Banner/Banner";
+// import Batting from "./Betting/Betting";
 import CompleteFooter from "../Common/Footer/CompleteFooter";
-import Header from "../Common/Header/Header";
-import TodaySpecial from "./TodaySpecial/TodaySpecial";
-import BettingModal from "./Betting/BettingModal/BettingModal";
-
-const Home = () => {
+// import TodaySpecial from "./TodaySpecial/TodaySpecial";
+// import BettingModal from "./Betting/BettingModal/BettingModal";
+import HeaderTop from "../Common/Header/HeaderTop";
+import AdminHeaderBottom from "./AdminBottomHeader";
+import "../Common/Header/Header.css";
+const AdminHome = () => {
   const [show_Modal, set_show_Modal] = useState("bet-modal-bg");
   const [open_Modal, set_open_Modal] = useState("bet-modal");
   const [Bet_Data, set_Bet_Data] = useState({});
@@ -27,19 +28,12 @@ const Home = () => {
 
   return (
     <React.Fragment>
-      <BettingModal
-        onHideModal={hideModalHandler}
-        bet_modal_bg={show_Modal}
-        bet_modal={open_Modal}
-        betData={Bet_Data}
-        matchData={Match_Data}
-      />
-      <Header />
+      <HeaderTop />
+      {/* <HeaderBottom /> */}
+      <AdminHeaderBottom />
       <Banner />
-      <Batting onShowModal={showModalHandler} />
-      <TodaySpecial />
       <CompleteFooter />
     </React.Fragment>
   );
 };
-export default Home;
+export default AdminHome;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { formPostData, formGetData } from "../Api/ApiRequest";
 
-const WonUser = () => {
+const Winners = () => {
   const [matchId, setMatchId] = useState("");
   const [matches, setMatches] = useState([]);
   const [matchData, setMatchData] = useState();
@@ -26,7 +26,7 @@ const WonUser = () => {
   async function handleChange({ target }) {
     try {
       const { data } = await formPostData(
-        "/won-users/get",
+        "/won-users/",
         { matchId: target.value },
         sessionStorage.getItem("token")
       );
@@ -101,4 +101,4 @@ const WonUser = () => {
   );
 };
 
-export default WonUser;
+export default Winners;

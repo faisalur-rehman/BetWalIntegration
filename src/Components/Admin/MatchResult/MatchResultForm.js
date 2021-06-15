@@ -26,6 +26,9 @@ const MatchResultForm = ({
                   name="matches"
                   onChange={({ target }) => setMatchId(target.value)}
                 >
+                  <option value="select" selected disabled>
+                    Select
+                  </option>
                   {matches.map((match, index) => (
                     <option value={match._id}>Match {index + 1}</option>
                   ))}

@@ -54,6 +54,7 @@ const BettingTable = (props) => {
                         value={single_match_data.homeOdd}
                         name={`teamOdd${i}`}
                         onChange={(e) => changeTeamOdd(e, "homeOdd")}
+                        required
                       />
                       {single_match_data.homeOdd}
                     </label>
@@ -79,6 +80,7 @@ const BettingTable = (props) => {
                         value={single_match_data.drawOdd}
                         name={`teamOdd${i}`}
                         onChange={(e) => changeTeamOdd(e, "drawOdd")}
+                        required
                       />
                       {single_match_data.drawOdd}
                     </label>
@@ -101,6 +103,7 @@ const BettingTable = (props) => {
                       value={single_match_data.awayOdd}
                       name={`teamOdd${i}`}
                       onChange={(e) => changeTeamOdd(e, "awayOdd")}
+                      required
                     />
                     {single_match_data.awayOdd}
                   </label>
@@ -117,6 +120,7 @@ const BettingTable = (props) => {
                   value={single_match_data.bttsYes}
                   name={`btts${i}`}
                   onChange={(e) => changeBtts(e, "bttsYes")}
+                  required
                 />
                 {single_match_data.bttsYes}
               </label>
@@ -139,6 +143,7 @@ const BettingTable = (props) => {
                   value={single_match_data.under25}
                   name={`over${i}`}
                   onChange={(e) => changeOver(e, "under25")}
+                  required
                 />
                 {single_match_data.under25}
               </label>
@@ -156,6 +161,13 @@ const BettingTable = (props) => {
             </td>
             <td>
               <button
+                style={{
+                  backgroundColor: "#FFD800",
+                  color: "black",
+                  border: "none",
+                  marginLeft: 5,
+                }}
+                type="submit"
                 onClick={() =>
                   props.onShowModal(
                     {
