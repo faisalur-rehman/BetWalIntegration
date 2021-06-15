@@ -11,6 +11,7 @@ import AccumulatorMain from "./Components/Accumulator_Data/AccumulatorDataMain";
 import FileUpload from "./Components/Admin/FileUpload";
 import MatchResult from "./Components/Admin/MatchResult/MatchResult";
 import ViewMatchDetail from "./Components/ViewMatchDetail/ViewMatchDetail";
+import WonUser from "./Components/WonUsers/WonUsers";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/user" component={User} />
         <Route path="/view-result" component={ViewMatchDetail} />
         <Route path="/accumulator_data" component={AccumulatorMain} />
+        <Route path="/won-user" component={WonUser} />
 
         {
           // admin routes

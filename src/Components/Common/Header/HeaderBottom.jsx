@@ -66,7 +66,7 @@ const HeaderBottom = () => {
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link" to="/view-result">
-                        View Match Result
+                        Match Result
                       </Link>
                     </li>
 
