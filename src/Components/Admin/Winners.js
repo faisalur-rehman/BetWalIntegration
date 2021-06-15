@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { formPostData, formGetData } from "../Api/ApiRequest";
 
 const Winners = () => {
-  const [matchId, setMatchId] = useState("");
   const [matches, setMatches] = useState([]);
-  const [matchData, setMatchData] = useState();
+  const [winners, setWinners] = useState([]);
   const [error, setError] = useState();
   const [result, setResult] = useState("");
 
@@ -21,7 +20,6 @@ const Winners = () => {
     }
     fetchData();
   }, []);
-  matchData && console.log(matchData);
 
   async function handleChange({ target }) {
     try {
@@ -30,6 +28,7 @@ const Winners = () => {
         { matchId: target.value },
         sessionStorage.getItem("token")
       );
+      setWinners(data.wonUsers);
       console.log(data);
       setResult(data.message);
       setError("");
@@ -62,34 +61,11 @@ const Winners = () => {
               <br />
               <br />
               <div>
-                {matchData &&
-                  (matchData.isAwayTeamWon ? (
-                    <p style={{ color: "white" }}>Away Team Won</p>
-                  ) : matchData.isHomeTeamWon ? (
-                    <p style={{ color: "white" }}>Home Team Won</p>
-                  ) : (
-                    <p style={{ color: "white" }}>Draw</p>
+                <ul>
+                  {winners.map((winner) => (
+                    <li>{winner}</li>
                   ))}
-              </div>
-              <div>
-                {matchData &&
-                  (matchData.isBtts ? (
-                    <p style={{ color: "white" }}>Both Team Scored</p>
-                  ) : (
-                    <p style={{ color: "white" }}>Both Team did not score</p>
-                  ))}
-              </div>
-              <div>
-                {matchData &&
-                  (matchData.isOver25 ? (
-                    <p style={{ color: "white" }}>
-                      Both Team Scored 3 goals or more
-                    </p>
-                  ) : (
-                    <p style={{ color: "white" }}>
-                      Both Team did not score 3 goals or more
-                    </p>
-                  ))}
+                </ul>
               </div>
               {error && <p style={{ color: "red" }}>{error}</p>}
               {result && <p style={{ color: "red" }}>{result}</p>}

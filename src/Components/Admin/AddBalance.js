@@ -5,11 +5,10 @@ import { formGetData, formPostData } from "../Api/ApiRequest";
 import { useHistory } from "react-router-dom";
 
 const AddBalance = () => {
-  const history = useHistory();
   const [freeBetBalance, setFreeBalance] = useState("");
   const [normalBalance, setNormalBalance] = useState("");
   const [error, setError] = useState("");
-  const [clicked, setClicked] = useState(false);
+  // const [clicked, setClicked] = useState(false);
   const [user, setUser] = useState("");
   const [allUsers, setAllUsers] = useState([]);
 
@@ -49,7 +48,7 @@ const AddBalance = () => {
       console.log(data);
 
       setError(data.message);
-      setClicked(true);
+      // setClicked(true);
     } catch (error) {
       console.log(error.response);
       setError(error.response.data.message);

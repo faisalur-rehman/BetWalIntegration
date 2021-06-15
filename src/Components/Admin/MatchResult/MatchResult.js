@@ -5,7 +5,7 @@ import MatchResultForm from "./MatchResultForm";
 
 const MatchResult = () => {
   const [teamWon, setTeamWon] = useState("");
-  const [matchDrawn, setMatchDrawn] = useState();
+  const [, setMatchDrawn] = useState();
   const [btts, setBtts] = useState();
   const [moreThanThree, setMoreThanThree] = useState();
   const [matches, setMatches] = useState([]);
