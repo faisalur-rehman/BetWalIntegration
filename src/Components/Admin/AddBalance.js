@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import "../../assets/bootstrap.min.css";
 import { formGetData, formPostData } from "../Api/ApiRequest";
-import { useHistory } from "react-router-dom";
 
 const AddBalance = () => {
   const [freeBetBalance, setFreeBalance] = useState("");
