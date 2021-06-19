@@ -1,6 +1,5 @@
 import Dashboard from "./Dashboard/Dashboard";
 import UserStatics from "./User_Statics/UserStatics";
-import PaymentHistory from "./Payment_History/PaymentHistory";
 import Header from "../Common/Header/Header";
 import CompleteFooter from "../Common/Footer/CompleteFooter";
 import React, { useEffect, useState } from "react";

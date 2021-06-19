@@ -1,11 +1,11 @@
 import "../Login/Login_Body/LoginBody.css";
 import React, { useState } from "react";
 import "../../assets/bootstrap.min.css";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 const FileUpload = () => {
-  const history = useHistory();
+  // const history = useHistory();
   const [file, setFile] = useState("");
   const [error, setError] = useState("");
   const [clicked, setClicked] = useState(false);

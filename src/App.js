@@ -19,7 +19,7 @@ import React, { useState, useEffect } from "react";
 import GetUserBalance from "./Components/Admin/GetUserBalance";
 
 function App() {
-  const [user, setUser] = useState("");
+  const [, setUser] = useState("");
 
   useEffect(() => {
     setUser(sessionStorage.getItem("isAdmin"));
