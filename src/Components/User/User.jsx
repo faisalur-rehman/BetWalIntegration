@@ -28,7 +28,7 @@ const User = () => {
     <div class="user-panel-dashboard">
       <Header />
       <Dashboard />
-      <UserStatics balance={balance} />
+      {balance && <UserStatics balance={balance} />}
       {/* <PaymentHistory /> */}
       <CompleteFooter />
     </div>

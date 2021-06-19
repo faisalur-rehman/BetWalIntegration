@@ -1,6 +1,7 @@
 import "./UserStatics.css";
 
 const User_Statics = ({ balance }) => {
+  console.log("balance", balance);
   return (
     <div class="player-statics">
       <div class="container">
