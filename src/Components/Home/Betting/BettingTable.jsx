@@ -183,7 +183,13 @@ const BettingTable = (props) => {
                       ...isOver,
                       matchId: single_match_data._id,
                     },
-                    single_match_data
+                    single_match_data,
+                    {
+                      betValue:
+                        Object.values(teamOdd)[0] +
+                        Object.values(isBtts)[0] +
+                        Object.values(isOver)[0],
+                    }
                   )
                 }
               >

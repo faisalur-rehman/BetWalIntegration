@@ -12,13 +12,15 @@ const Home = () => {
   const [open_Modal, set_open_Modal] = useState("bet-modal");
   const [Bet_Data, set_Bet_Data] = useState({});
   const [Match_Data, set_Match_Data] = useState({});
+  const [betValue, setBetValue] = useState();
 
-  const showModalHandler = (bet_data, match_data) => {
+  const showModalHandler = (bet_data, match_data, betValue) => {
     console.log("show clicked");
     set_show_Modal("bet-modal-bg show");
     set_open_Modal("bet-modal open");
     set_Bet_Data({ ...bet_data });
     set_Match_Data({ ...match_data });
+    setBetValue(betValue);
   };
   console.log("isAdmin", sessionStorage.getItem("isAdmin"));
   const hideModalHandler = () => {
@@ -34,6 +36,7 @@ const Home = () => {
         bet_modal={open_Modal}
         betData={Bet_Data}
         matchData={Match_Data}
+        betValue={betValue}
       />
       <Header />
       <Banner />

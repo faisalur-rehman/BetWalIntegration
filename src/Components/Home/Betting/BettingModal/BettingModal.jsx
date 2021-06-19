@@ -83,7 +83,7 @@ const Betting_Model = (props) => {
               >
                 -
               </button>
-              <span class="altv-2">{bet_count}</span>
+              <span class="altv-2">${bet_count}</span>
 
               <button
                 class="ctrl-button-for-number plus-number"
@@ -101,9 +101,11 @@ const Betting_Model = (props) => {
               </li>
               <li>
                 <span class="number-of-bet">Total Est. Returns :</span>
-                <span class="number-of-bet-count">
-                  {(bet_count * props.betData.bet_value).toFixed(2)}
-                </span>
+                {props.betValue && (
+                  <span class="number-of-bet-count">
+                    ${(bet_count * props.betValue.betValue).toFixed(2)}
+                  </span>
+                )}
               </li>
             </ul>
           </div>

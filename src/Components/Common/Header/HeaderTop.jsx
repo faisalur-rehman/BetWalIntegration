@@ -52,7 +52,7 @@ const HeaderTop = () => {
             <div className="right-area">
               <ul>
                 <li>
-                  <Link className="link" to="">
+                  <Link className="link" to="/user">
                     <i className="fal fa-user-circle fa-1x"></i>
                     Hi, {sessionStorage.getItem("name")}
                   </Link>
