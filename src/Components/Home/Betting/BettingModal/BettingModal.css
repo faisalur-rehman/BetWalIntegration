@@ -168,3 +168,8 @@
   background-color: #ffd800;
   color: #000;
 }
+.balance-method {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 10px;
+}

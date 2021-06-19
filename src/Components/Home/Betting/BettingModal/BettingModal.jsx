@@ -7,6 +7,7 @@ const Betting_Model = (props) => {
   const [bet_count, set_bet_count] = useState(0);
   const [response, setResponse] = useState("");
   const [error, setError] = useState("");
+  const [balanceMethod, setBalanceMethod] = useState("");
 
   const handleDecrement = () => {
     var temp = bet_count;
@@ -24,13 +25,23 @@ const Betting_Model = (props) => {
     setResponse("");
   };
 
+  const handleBalanceChange = ({ target }) => {
+    setBalanceMethod(target.value);
+  };
+
   async function handleBet() {
+    let method =
+      balanceMethod === "freeBetBalance"
+        ? { freeBetBalance: 1, normalBalance: 0 }
+        : { normalBalance: 1, freeBetBalance: 0 };
+    console.log("method", method);
     try {
       const { data } = await formPostData(
         "/user-betslip/add",
         {
           ...props.betData,
           stake: bet_count,
+          ...method,
         },
         sessionStorage.getItem("token")
       );
@@ -92,6 +103,20 @@ const Betting_Model = (props) => {
                 +
               </button>
             </div>
+          </div>
+          <div className="balance-method">
+            <p>Choose Balance Method</p>
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              onChange={handleBalanceChange}
+            >
+              <option selected disabled>
+                Select
+              </option>
+              <option value="freeBetBalance">Free Balance</option>
+              <option value="normalBalance">Normal Balance</option>
+            </select>
           </div>
           <div class="bet-total">
             <ul>
