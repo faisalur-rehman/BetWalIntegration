@@ -5,6 +5,8 @@ import { formPostData } from "../../../Api/ApiRequest";
 
 const Betting_Model = (props) => {
   const [bet_count, set_bet_count] = useState(0);
+  const [response, setResponse] = useState("");
+  const [error, setError] = useState("");
 
   const handleDecrement = () => {
     var temp = bet_count;
@@ -18,6 +20,8 @@ const Betting_Model = (props) => {
   const handleCloseModal = () => {
     set_bet_count(0);
     props.onHideModal();
+    setError("");
+    setResponse("");
   };
 
   async function handleBet() {
@@ -30,8 +34,12 @@ const Betting_Model = (props) => {
         },
         sessionStorage.getItem("token")
       );
+      setResponse(data.message);
+      setError("");
       console.log(data);
     } catch (error) {
+      setResponse("");
+      setError(error.response.data.message);
       console.log(error.response);
     }
   }
@@ -92,16 +100,20 @@ const Betting_Model = (props) => {
                 <span class="altv-3">{bet_count}</span>
               </li>
               <li>
-                {/* <span class="number-of-bet">Total Est. Returns :</span>
+                <span class="number-of-bet">Total Est. Returns :</span>
                 <span class="number-of-bet-count">
                   {(bet_count * props.betData.bet_value).toFixed(2)}
-                </span> */}
+                </span>
               </li>
             </ul>
           </div>
         </div>
+        {response && <p>{response}</p>}
+        {error && <p>{error}</p>}
         <div class="bet-footer">
-          <button onClick={handleBet}>Bet Now</button>
+          <button onClick={handleBet} disabled={bet_count <= 0 ? true : false}>
+            Bet Now
+          </button>
         </div>
       </div>
     </div>

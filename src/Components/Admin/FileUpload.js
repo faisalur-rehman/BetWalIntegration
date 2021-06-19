@@ -24,7 +24,7 @@ const FileUpload = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/football/upload",
+        "https://betval-app.herokuapp.com/football/upload",
         data,
         config
       );
@@ -59,7 +59,9 @@ const FileUpload = () => {
                   Send File
                 </button>
               </form>
-              {!error && clicked && history.push("/")}
+              {!error && clicked && (
+                <p style={{ color: "white" }}>File uploaded successfully</p>
+              )}
             </div>
           </div>
         </div>

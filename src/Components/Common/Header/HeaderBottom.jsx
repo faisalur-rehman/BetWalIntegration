@@ -57,11 +57,6 @@ const HeaderBottom = () => {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/accumulator">
-                        Accumulator
-                      </Link>
-                    </li>
-                    <li className="nav-item">
                       <Link className="nav-link" to="/special">
                         Specials
                       </Link>

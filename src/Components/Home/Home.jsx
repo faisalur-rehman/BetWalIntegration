@@ -5,6 +5,7 @@ import CompleteFooter from "../Common/Footer/CompleteFooter";
 import Header from "../Common/Header/Header";
 import TodaySpecial from "./TodaySpecial/TodaySpecial";
 import BettingModal from "./Betting/BettingModal/BettingModal";
+import Betslip from "./Betslip/Betslip";
 
 const Home = () => {
   const [show_Modal, set_show_Modal] = useState("bet-modal-bg");
@@ -38,6 +39,7 @@ const Home = () => {
       <Banner />
       <Batting onShowModal={showModalHandler} />
       <TodaySpecial />
+      <Betslip />
       <CompleteFooter />
     </React.Fragment>
   );

@@ -63,7 +63,7 @@ const AddBalance = () => {
           <div class="col-xl-5 col-lg-5 col-md-6 col-sm-9">
             <div class="login-form">
               <form onSubmit={handleSubmit}>
-                <label className="label">Select Match</label>
+                <label className="label">Select User</label>
                 <br />
                 <select
                   name="user"
