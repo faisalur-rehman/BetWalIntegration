@@ -72,6 +72,11 @@ const AdminHeaderBottom = () => {
                           Match Results
                         </Link>
                       </li>
+                      <li className="nav-item">
+                        <Link className="nav-link" to="get-user-balance">
+                          Balance Info
+                        </Link>
+                      </li>
                     </>
 
                     {!sessionStorage.getItem("token") && (

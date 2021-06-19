@@ -16,6 +16,7 @@ import Winners from "./Components/Admin/Winners";
 import AddBalance from "./Components/Admin/AddBalance";
 import AdminHome from "./Components/AdminHeader/AdminHeader";
 import React, { useState, useEffect } from "react";
+import GetUserBalance from "./Components/Admin/GetUserBalance";
 
 function App() {
   const [user, setUser] = useState("");
@@ -60,6 +61,7 @@ function App() {
         <Route path="/match-results" component={MatchResult} />
         <Route path="/winners" component={Winners} />
         <Route path="/add-balance" component={AddBalance} />
+        <Route path="/get-user-balance" component={GetUserBalance} />
       </Switch>
     </Router>
     // <div className="App">
