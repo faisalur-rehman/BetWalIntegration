@@ -33,7 +33,7 @@ function App() {
     // }
     // window.location.reload();
   }, []);
-  console.log("user", user);
+
   return (
     <Router>
       <Switch>

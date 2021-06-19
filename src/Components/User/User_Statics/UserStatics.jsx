@@ -1,6 +1,6 @@
 import "./UserStatics.css";
 
-const User_Statics = () => {
+const User_Statics = ({ balance }) => {
   return (
     <div class="player-statics">
       <div class="container">
@@ -21,8 +21,8 @@ const User_Statics = () => {
                 />
               </div>
               <div class="part-text">
-                <span class="number">$584.00</span>
-                <span class="title">Available Balance</span>
+                <span class="number">${balance.freeBetBalance}</span>
+                <span class="title">Free Balance</span>
               </div>
             </div>
           </div>
@@ -35,37 +35,8 @@ const User_Statics = () => {
                 />
               </div>
               <div class="part-text">
-                <span class="number">$464.00</span>
-                <span class="title">Total Winnings </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-3 col-sm-6">
-            <div class="single-static">
-              <div class="part-icon">
-                <img
-                  src="http://iamubaidah.com/html/peredion/demo/assets/img/svg/money2.svg"
-                  alt=""
-                />
-              </div>
-              <div class="part-text">
-                <span class="number">$24k.00</span>
-                <span class="title">Deposits Total</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-lg-3 col-sm-6">
-            <div class="single-static">
-              <div class="part-icon">
-                <img
-                  src="http://iamubaidah.com/html/peredion/demo/assets/img/svg/cash.svg"
-                  alt=""
-                />
-              </div>
-              <div class="part-text">
-                <span class="number">$158.00</span>
-                <span class="title">Your Total Profit or Losses</span>
+                <span class="number">${balance.normalBalance}</span>
+                <span class="title">Normal Balance </span>
               </div>
             </div>
           </div>
