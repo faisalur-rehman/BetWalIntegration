@@ -12,7 +12,6 @@ const Betslip = () => {
           "/user-betslip/get",
           sessionStorage.getItem("token")
         );
-        console.log("data", data);
         console.log("betslp", data);
         setData(data.betslips);
       } catch (error) {
@@ -30,6 +29,12 @@ const Betslip = () => {
           data.map((bet) => (
             <div className="card" style={{ width: "18rem" }}>
               <div className="card-body">
+                <p>
+                  Bet Status:{" "}
+                  <span style={{ color: "#ffd800" }}>
+                    {bet.iBetWon ? "Won" : "Lost"}
+                  </span>
+                </p>
                 {bet.awayOdd > 0 && <p>Away Odd: {bet.awayOdd}</p>}
                 {bet.betReturn > 0 && <p>Bet Return: {bet.betReturn}</p>}
                 {bet.bttsNo > 0 && <p>BTTS No: {bet.bttsNo}</p>}
@@ -39,6 +44,7 @@ const Betslip = () => {
                 {bet.over25 > 0 && <p>Over 2.5 Goals: {bet.over25}</p>}
                 {bet.under25 > 0 && <p>Under 2.5 Goals: {bet.under25}</p>}
                 <p>Total Odds: {bet.totalOdds.toFixed(2)}</p>
+                <p>Total Stake: {bet.stake}</p>
               </div>
             </div>
           ))}

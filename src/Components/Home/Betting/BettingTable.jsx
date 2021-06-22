@@ -63,8 +63,13 @@ const BettingTable = (props) => {
                           single_match_data.homeOdd + "homeOdd" + i
                         }
                         onChange={(e) => changeTeamOdd(e, "homeOdd", i)}
+                        style={{
+                          marginLeft: "10px",
+                          marginBottom: "5px",
+                          minWidth: "60px",
+                        }}
                       >
-                        {single_match_data.homeOdd}
+                        {single_match_data.homeOdd.toFixed(2)}
                       </ToggleButton>
                     </ButtonGroup>
                   </span>
@@ -86,8 +91,13 @@ const BettingTable = (props) => {
                           single_match_data.drawOdd + "drawOdd" + i
                         }
                         onChange={(e) => changeTeamOdd(e, "drawOdd", i)}
+                        style={{
+                          marginLeft: "10px",
+                          marginBottom: "5px",
+                          minWidth: "60px",
+                        }}
                       >
-                        {single_match_data.drawOdd}
+                        {single_match_data.drawOdd.toFixed(2)}
                       </ToggleButton>
                     </ButtonGroup>
                   </span>
@@ -108,8 +118,13 @@ const BettingTable = (props) => {
                         single_match_data.awayOdd + "awayOdd" + i
                       }
                       onChange={(e) => changeTeamOdd(e, "awayOdd", i)}
+                      style={{
+                        marginLeft: "10px",
+                        marginBottom: "5px",
+                        minWidth: "60px",
+                      }}
                     >
-                      {single_match_data.awayOdd}
+                      {single_match_data.awayOdd.toFixed(2)}
                     </ToggleButton>
                   </ButtonGroup>
                 </a>
@@ -126,8 +141,13 @@ const BettingTable = (props) => {
                     bttsValue === single_match_data.bttsYes + "bttsYes" + i
                   }
                   onChange={(e) => changeBtts(e, "bttsYes", i)}
+                  style={{
+                    marginLeft: "10px",
+                    marginBottom: "5px",
+                    minWidth: "60px",
+                  }}
                 >
-                  {single_match_data.bttsYes}
+                  {single_match_data.bttsYes.toFixed(2)}
                 </ToggleButton>
               </ButtonGroup>
             </td>
@@ -142,8 +162,13 @@ const BettingTable = (props) => {
                     bttsValue === single_match_data.bttsYes + "bttsNo" + i
                   }
                   onChange={(e) => changeBtts(e, "bttsNo", i)}
+                  style={{
+                    marginLeft: "10px",
+                    marginBottom: "5px",
+                    minWidth: "60px",
+                  }}
                 >
-                  {single_match_data.bttsNo}
+                  {single_match_data.bttsNo.toFixed(2)}
                 </ToggleButton>
               </ButtonGroup>
             </td>
@@ -158,8 +183,13 @@ const BettingTable = (props) => {
                     overValue === single_match_data.under25 + "under25" + i
                   }
                   onChange={(e) => changeOver(e, "under25", i)}
+                  style={{
+                    marginLeft: "10px",
+                    marginBottom: "5px",
+                    minWidth: "60px",
+                  }}
                 >
-                  {single_match_data.bttsNo}
+                  {single_match_data.bttsNo.toFixed(2)}
                 </ToggleButton>
               </ButtonGroup>
             </td>
@@ -174,8 +204,13 @@ const BettingTable = (props) => {
                     overValue === single_match_data.over25 + "over25" + i
                   }
                   onChange={(e) => changeOver(e, "over25", i)}
+                  style={{
+                    marginLeft: "10px",
+                    marginBottom: "5px",
+                    minWidth: "60px",
+                  }}
                 >
-                  {single_match_data.bttsNo}
+                  {single_match_data.bttsNo.toFixed(2)}
                 </ToggleButton>
               </ButtonGroup>
             </td>

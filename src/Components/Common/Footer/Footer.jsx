@@ -59,9 +59,7 @@ const Footer = () => {
                 <li>
                   <Link to="/my_bets">MY BETS</Link>
                 </li>
-                <li>
-                  <Link to="/accumulator">ACCUMULATOR</Link>
-                </li>
+
                 <li>
                   <Link to="/special">SPECIALS</Link>
                 </li>

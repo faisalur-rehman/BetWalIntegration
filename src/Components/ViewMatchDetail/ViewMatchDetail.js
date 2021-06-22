@@ -31,7 +31,7 @@ const ViewMatchDetail = () => {
         { matchId },
         sessionStorage.getItem("token")
       );
-      console.log(data);
+      console.log("matchData", data);
       setMatchData(data.matchResult);
       setError("");
     } catch (error) {
@@ -58,8 +58,10 @@ const ViewMatchDetail = () => {
                 <option value="select" disabled selected>
                   Select
                 </option>
-                {matches.map((match, index) => (
-                  <option value={match._id}>Match {index + 1}</option>
+                {matches.map((match) => (
+                  <option value={match._id}>
+                    {match.homeTeam} vs {match.awayTeam}
+                  </option>
                 ))}
               </select>
               <br />

@@ -28,8 +28,8 @@ const Winners = () => {
         { matchId: target.value },
         sessionStorage.getItem("token")
       );
-      setWinners(data);
-      console.log("winners", winners);
+      setWinners(data.wonUsers);
+      console.log("winners", data);
       setResult(data.message);
       setError("");
     } catch (error) {
@@ -64,9 +64,9 @@ const Winners = () => {
               <br />
               <div>
                 <ul>
-                  {/* {winners.map((winner) => (
+                  {winners.map((winner) => (
                     <li>{winner}</li>
-                  ))} */}
+                  ))}
                 </ul>
               </div>
               {error && <p style={{ color: "red" }}>{error}</p>}
