@@ -23,13 +23,13 @@ const Betslip = () => {
   }, []);
 
   return (
-    <>
+    <div className="betslip-bg">
       <h2>User Betslip</h2>
       <div className="betslip">
         {data.length > 0 &&
           data.map((bet) => (
-            <div class="card" style={{ width: "18rem" }}>
-              <div class="card-body">
+            <div className="card" style={{ width: "18rem" }}>
+              <div className="card-body">
                 {bet.awayOdd > 0 && <p>Away Odd: {bet.awayOdd}</p>}
                 {bet.betReturn > 0 && <p>Bet Return: {bet.betReturn}</p>}
                 {bet.bttsNo > 0 && <p>BTTS No: {bet.bttsNo}</p>}
@@ -38,12 +38,12 @@ const Betslip = () => {
                 {bet.homeOdd > 0 && <p>Home Odd: {bet.homeOdd}</p>}
                 {bet.over25 > 0 && <p>Over 2.5 Goals: {bet.over25}</p>}
                 {bet.under25 > 0 && <p>Under 2.5 Goals: {bet.under25}</p>}
-                <p>Total Odds: {bet.totalOdds}</p>
+                <p>Total Odds: {bet.totalOdds.toFixed(2)}</p>
               </div>
             </div>
           ))}
       </div>
-    </>
+    </div>
   );
 };
 

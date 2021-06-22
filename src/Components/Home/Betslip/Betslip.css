@@ -1,9 +1,16 @@
+.betslip-bg {
+  background-color: #130c0c;
+  padding: 20px;
+}
+.betslip-bg h2 {
+  color: orange;
+}
 .betslip {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 .card {
-  width: 30%;
+  margin: 10px;
 }

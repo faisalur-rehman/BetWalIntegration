@@ -28,7 +28,7 @@ const Winners = () => {
         { matchId: target.value },
         sessionStorage.getItem("token")
       );
-      setWinners(data.wonUsers);
+      setWinners(data);
       console.log("winners", winners);
       setResult(data.message);
       setError("");
@@ -64,9 +64,9 @@ const Winners = () => {
               <br />
               <div>
                 <ul>
-                  {winners.map((winner) => (
+                  {/* {winners.map((winner) => (
                     <li>{winner}</li>
-                  ))}
+                  ))} */}
                 </ul>
               </div>
               {error && <p style={{ color: "red" }}>{error}</p>}
