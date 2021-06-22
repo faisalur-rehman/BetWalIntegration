@@ -1,13 +1,12 @@
 import React from "react";
 import Banner from "../Home/Banner/Banner";
 import CompleteFooter from "../Common/Footer/CompleteFooter";
-import HeaderTop from "../Common/Header/HeaderTop";
 import AdminHeaderBottom from "./AdminBottomHeader";
 import "../Common/Header/Header.css";
 const AdminHome = () => {
   return (
     <React.Fragment>
-      <HeaderTop />
+      {/* <HeaderTop /> */}
       <AdminHeaderBottom />
       <Banner />
       <CompleteFooter />

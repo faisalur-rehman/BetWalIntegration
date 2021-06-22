@@ -1,5 +1,5 @@
 import React from "react";
-import "../Common/Header/Header.css";
+import "./AdminHeader.css";
 import logo from "../../assets/img/logo.png";
 import { Link } from "react-router-dom";
 
@@ -10,14 +10,18 @@ const AdminHeaderBottom = () => {
     sessionStorage.getItem("isAdmin") && sessionStorage.removeItem("isAdmin");
   }
   return (
-    <div id="navbar" className="header-bottom">
+    <div
+      id="navbar"
+      className="header-bottom"
+      style={{ backgroundColor: "#111111" }}
+    >
       <div className="container">
         <div className="row">
           <div className="col-xl-3 col-lg-3 d-xl-flex d-lg-flex d-block align-items-center">
             <div className="row">
               <div className="col-xl-12 col-lg-12 col-6 d-xl-block d-lg-block d-flex align-items-center">
                 <div className="logo">
-                  <Link to="/">
+                  <Link to="/admin">
                     <img src={logo} alt="logo" />
                   </Link>
                 </div>
@@ -41,7 +45,7 @@ const AdminHeaderBottom = () => {
             <div className="mainmenu">
               <nav className="navbar navbar-expand-lg">
                 <div
-                  className="collapse navbar-collapse"
+                  className="collapse navbar-collapse list"
                   id="navbarSupportedContent"
                 >
                   <ul className="navbar-nav ml-auto">
