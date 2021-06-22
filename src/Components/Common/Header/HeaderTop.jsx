@@ -1,11 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import { formGetData } from "../../Api/ApiRequest";
 
 const HeaderTop = () => {
   //code to find current time and date
   const locale = "en";
   const [today, setDate] = useState(new Date());
+  const [balance, setBalance] = useState();
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const { data } = await formGetData(
+          "/user-balance/get",
+          sessionStorage.getItem("token")
+        );
+        setBalance(data.balance);
+        console.log("user", data);
+      } catch (error) {
+        console.log(error.response);
+      }
+    }
+    fetchData();
+  }, []);
   useEffect(() => {
     const timer = setInterval(() => {
       setDate(new Date());
@@ -51,6 +68,15 @@ const HeaderTop = () => {
           <div className="col-xl-6 col-lg-6 col-sm-6">
             <div className="right-area">
               <ul>
+                {balance && <li>Normal Balance: ${balance.normalBalance}</li>}
+                {balance && (
+                  <li>
+                    Free Balance:
+                    <span style={{ color: "yellow" }}>
+                      ${balance.freeBetBalance}
+                    </span>
+                  </li>
+                )}
                 <li>
                   <Link className="link" to="/user">
                     <i className="fal fa-user-circle fa-1x"></i>

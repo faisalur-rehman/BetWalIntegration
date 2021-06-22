@@ -15,14 +15,12 @@ const Home = () => {
   const [betValue, setBetValue] = useState();
 
   const showModalHandler = (bet_data, match_data, betValue) => {
-    console.log("show clicked");
     set_show_Modal("bet-modal-bg show");
     set_open_Modal("bet-modal open");
     set_Bet_Data({ ...bet_data });
     set_Match_Data({ ...match_data });
     setBetValue(betValue);
   };
-  console.log("isAdmin", sessionStorage.getItem("isAdmin"));
   const hideModalHandler = () => {
     set_show_Modal("bet-modal-bg");
     set_open_Modal("bet-modal");

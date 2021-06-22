@@ -1,20 +1,29 @@
 import React, { useState } from "react";
 import "./Betting.css";
+import { ButtonGroup, ToggleButton } from "react-bootstrap";
 
 const BettingTable = (props) => {
   const [teamOdd, setTeamOdd] = useState({});
   const [isBtts, setBtts] = useState({});
   const [isOver, setOver] = useState({});
+  const [teamOddValue, setTeamOddValue] = useState("");
+  const [bttsValue, setBttsValue] = useState("");
+  const [overValue, setOverValue] = useState("");
 
-  function changeTeamOdd(e, odd) {
+  function changeTeamOdd(e, odd, i) {
     setTeamOdd({ [odd]: +e.target.value });
+    setTeamOddValue(e.currentTarget.value + odd + i);
   }
-  function changeBtts(e, btts) {
+  function changeBtts(e, btts, i) {
     setBtts({ [btts]: +e.target.value });
+    setBttsValue(e.currentTarget.value + btts + i);
   }
-  function changeOver(e, over) {
+  function changeOver(e, over, i) {
     setOver({ [over]: +e.target.value });
+    setOverValue(e.currentTarget.value + over + i);
   }
+
+  console.log("radio value", teamOdd);
 
   return (
     <div
@@ -40,124 +49,135 @@ const BettingTable = (props) => {
             <td className="td">{single_match_data.homeTeam}</td>
             <td className="td">{single_match_data.awayTeam}</td>
             <td className="td">
-              <div
-                className="single-place-to-bet"
-                // onClick={() =>
-                //   props.onShowModal(single_match_data, single_match_data)
-                // }
-              >
+              <div className="single-place-to-bet">
                 <a href>
                   <span className="bet-price" style={{ display: "block" }}>
-                    <label>
-                      <input
+                    <ButtonGroup toggle>
+                      <ToggleButton
                         type="radio"
+                        variant="outline-warning"
+                        name={`teamOdd${i}`}
                         value={single_match_data.homeOdd}
-                        name={`teamOdd${i}`}
-                        onChange={(e) => changeTeamOdd(e, "homeOdd")}
-                        required
-                      />
-                      {single_match_data.homeOdd}
-                    </label>
+                        checked={
+                          teamOddValue ===
+                          single_match_data.homeOdd + "homeOdd" + i
+                        }
+                        onChange={(e) => changeTeamOdd(e, "homeOdd", i)}
+                      >
+                        {single_match_data.homeOdd}
+                      </ToggleButton>
+                    </ButtonGroup>
                   </span>
-                  {/* <span className="result-for-final">
-                    {single_match_data.homeTeam}
-                  </span> */}
                 </a>
               </div>
             </td>
             <td className="td">
-              <div
-                className="single-place-to-bet"
-                // onClick={() =>
-                //   props.onShowModal(single_match_data, single_match_data)
-                // }
-              >
+              <div className="single-place-to-bet">
                 <a href>
                   <span className="bet-price" style={{ display: "block" }}>
-                    <label>
-                      <input
+                    <ButtonGroup toggle>
+                      <ToggleButton
                         type="radio"
-                        value={single_match_data.drawOdd}
+                        variant="outline-warning"
                         name={`teamOdd${i}`}
-                        onChange={(e) => changeTeamOdd(e, "drawOdd")}
-                        required
-                      />
-                      {single_match_data.drawOdd}
-                    </label>
+                        value={single_match_data.drawOdd}
+                        checked={
+                          teamOddValue ===
+                          single_match_data.drawOdd + "drawOdd" + i
+                        }
+                        onChange={(e) => changeTeamOdd(e, "drawOdd", i)}
+                      >
+                        {single_match_data.drawOdd}
+                      </ToggleButton>
+                    </ButtonGroup>
                   </span>
-                  {/* <span className="result-for-final">Draw</span> */}
                 </a>
               </div>
             </td>
             <td className="td">
-              <div
-                className="single-place-to-bet"
-                // onClick={() =>
-                //   props.onShowModal(single_match_data, single_match_data)
-                // }
-              >
+              <div className="single-place-to-bet">
                 <a href>
-                  <label>
-                    <input
+                  <ButtonGroup toggle>
+                    <ToggleButton
                       type="radio"
-                      value={single_match_data.awayOdd}
+                      variant="outline-warning"
                       name={`teamOdd${i}`}
-                      onChange={(e) => changeTeamOdd(e, "awayOdd")}
-                      required
-                    />
-                    {single_match_data.awayOdd}
-                  </label>
-                  {/* <span className="result-for-final">
-                    {single_match_data.awayTeam}
-                  </span> */}
+                      value={single_match_data.awayOdd}
+                      checked={
+                        teamOddValue ===
+                        single_match_data.awayOdd + "awayOdd" + i
+                      }
+                      onChange={(e) => changeTeamOdd(e, "awayOdd", i)}
+                    >
+                      {single_match_data.awayOdd}
+                    </ToggleButton>
+                  </ButtonGroup>
                 </a>
               </div>
             </td>
             <td className="td">
-              <label>
-                <input
+              <ButtonGroup toggle>
+                <ToggleButton
                   type="radio"
+                  variant="outline-warning"
+                  name={`btts${i}`}
                   value={single_match_data.bttsYes}
-                  name={`btts${i}`}
-                  onChange={(e) => changeBtts(e, "bttsYes")}
-                  required
-                />
-                {single_match_data.bttsYes}
-              </label>
+                  checked={
+                    bttsValue === single_match_data.bttsYes + "bttsYes" + i
+                  }
+                  onChange={(e) => changeBtts(e, "bttsYes", i)}
+                >
+                  {single_match_data.bttsYes}
+                </ToggleButton>
+              </ButtonGroup>
             </td>
             <td className="td">
-              <label>
-                <input
+              <ButtonGroup toggle>
+                <ToggleButton
                   type="radio"
+                  variant="outline-warning"
+                  name={`btts${i}`}
                   value={single_match_data.bttsNo}
-                  name={`btts${i}`}
-                  onChange={(e) => changeBtts(e, "bttsNo")}
-                />
-                {single_match_data.bttsNo}
-              </label>
+                  checked={
+                    bttsValue === single_match_data.bttsYes + "bttsNo" + i
+                  }
+                  onChange={(e) => changeBtts(e, "bttsNo", i)}
+                >
+                  {single_match_data.bttsNo}
+                </ToggleButton>
+              </ButtonGroup>
             </td>
             <td className="td">
-              <label>
-                <input
+              <ButtonGroup toggle>
+                <ToggleButton
                   type="radio"
+                  variant="outline-warning"
+                  name={`over${i}`}
                   value={single_match_data.under25}
-                  name={`over${i}`}
-                  onChange={(e) => changeOver(e, "under25")}
-                  required
-                />
-                {single_match_data.under25}
-              </label>
+                  checked={
+                    overValue === single_match_data.under25 + "under25" + i
+                  }
+                  onChange={(e) => changeOver(e, "under25", i)}
+                >
+                  {single_match_data.bttsNo}
+                </ToggleButton>
+              </ButtonGroup>
             </td>
             <td className="td">
-              <label>
-                <input
+              <ButtonGroup toggle>
+                <ToggleButton
                   type="radio"
-                  value={single_match_data.over25}
+                  variant="outline-warning"
                   name={`over${i}`}
-                  onChange={(e) => changeOver(e, "over25")}
-                />
-                {single_match_data.over25}
-              </label>
+                  value={single_match_data.over25}
+                  checked={
+                    overValue === single_match_data.over25 + "over25" + i
+                  }
+                  onChange={(e) => changeOver(e, "over25", i)}
+                >
+                  {single_match_data.bttsNo}
+                </ToggleButton>
+              </ButtonGroup>
             </td>
             <td>
               <button
@@ -199,78 +219,6 @@ const BettingTable = (props) => {
           </tr>
         ))}
       </table>
-
-      {/* <div className="sport-content-title">
-        <h3>
-          {props.name}
-          <span className="sport-content-conter">{`[${props.data.length}]`}</span>
-        </h3>
-      </div>
-      <div className="sports-list">
-        <h4 className="title">{props.league_name}</h4>
-        {props.data.map((single_match_data) => (
-          <div className="single-sport-box">
-            {/* <div className="part-icon">
-              <i className="far fa-futbol"></i>
-            </div> 
-            <div className="part-match">
-              <div
-                className="single-place-to-bet"
-                onClick={() =>
-                  props.onShowModal(single_match_data, single_match_data)
-                }
-              >
-                <a href>
-                  <span className="bet-price">{single_match_data.homeOdd}</span>
-                  <span className="result-for-final">
-                    {single_match_data.homeTeam}
-                  </span>
-                </a>
-              </div>
-              <div
-                className="single-place-to-bet"
-                onClick={() =>
-                  props.onShowModal(single_match_data, single_match_data)
-                }
-              >
-                <a href>
-                  <span className="bet-price">{single_match_data.drawOdd}</span>
-                  <span className="result-for-final">Draw</span>
-                </a>
-              </div>
-              <div
-                className="single-place-to-bet"
-                onClick={() =>
-                  props.onShowModal(single_match_data, single_match_data)
-                }
-              >
-                <a href>
-                  <span className="bet-price">{single_match_data.awayOdd}</span>
-                  <span className="result-for-final">
-                    {single_match_data.awayTeam}
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div className="part-team">
-              <div
-                className="single-place-to-bet"
-                onClick={() =>
-                  props.onShowModal(single_match_data, single_match_data)
-                }
-              >
-                <a href>
-                  <span className="bet-price">{single_match_data.bttsYes}</span>
-                </a>
-              </div>
-            </div>
-
-            <div className="part-bnonus">
-              <span className="bonus-number">{`+${single_match_data.bonus_number}`}</span>
-            </div>
-          </div>
-        ))}
-      </div> */}
     </div>
   );
 };

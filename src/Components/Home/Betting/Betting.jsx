@@ -32,18 +32,6 @@ const Batting = (props) => {
                     league_name="ENGLAND INTERNATIONAL LEAGUE"
                     data={matches}
                   />
-                  {/* <BettingTable
-                    onShowModal={props.onShowModal}
-                    name="TENNIS"
-                    league_name="FRANCE NATIONAL TENNIS"
-                    data={Tennis_Matches}
-                  />
-                  <BettingTable
-                    onShowModal={props.onShowModal}
-                    name="BASKETBALL"
-                    league_name="LEAGUE OF EUROPE"
-                    data={Basketball_Matches}
-                  /> */}
                 </div>
               </div>
             </div>

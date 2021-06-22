@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { formGetData } from "../Api/ApiRequest";
+import AddBalance from "./AddBalance";
 
 const GetUserBalance = () => {
   const [data, setData] = useState([]);
@@ -20,6 +21,7 @@ const GetUserBalance = () => {
   console.log("user", data);
   return (
     <div class="login">
+      <AddBalance />
       <div class="container">
         <div class="row justify-content-center">
           <h1>All User Balance</h1>

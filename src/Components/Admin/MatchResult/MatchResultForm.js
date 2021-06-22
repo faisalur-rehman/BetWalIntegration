@@ -29,8 +29,10 @@ const MatchResultForm = ({
                   <option value="select" selected disabled>
                     Select
                   </option>
-                  {matches.map((match, index) => (
-                    <option value={match._id}>Match {index + 1}</option>
+                  {matches.map((match) => (
+                    <option value={match._id} key={match._id}>
+                      {match.homeTeam} vs {match.awayTeam}
+                    </option>
                   ))}
                 </select>
                 <br />

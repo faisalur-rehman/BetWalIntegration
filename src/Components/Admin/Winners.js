@@ -29,7 +29,7 @@ const Winners = () => {
         sessionStorage.getItem("token")
       );
       setWinners(data.wonUsers);
-      console.log(data);
+      console.log("winners", winners);
       setResult(data.message);
       setError("");
     } catch (error) {
@@ -54,8 +54,10 @@ const Winners = () => {
                 <option value="select" disabled selected>
                   Select
                 </option>
-                {matches.map((match, index) => (
-                  <option value={match._id}>Match {index + 1}</option>
+                {matches.map((match) => (
+                  <option value={match._id}>
+                    {match.homeTeam} vs {match.awayTeam}
+                  </option>
                 ))}
               </select>
               <br />
