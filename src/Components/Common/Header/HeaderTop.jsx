@@ -68,12 +68,14 @@ const HeaderTop = () => {
           <div className="col-xl-6 col-lg-6 col-sm-6">
             <div className="right-area">
               <ul>
-                {balance && <li>Normal Balance: ${balance.normalBalance}</li>}
+                {balance && (
+                  <li>Balance: £{balance.normalBalance.toFixed(2)}</li>
+                )}
                 {balance && (
                   <li>
-                    Free Balance:
+                    Free Bets:
                     <span style={{ color: "yellow" }}>
-                      ${balance.freeBetBalance}
+                      £{balance.freeBetBalance.toFixed(2)}
                     </span>
                   </li>
                 )}

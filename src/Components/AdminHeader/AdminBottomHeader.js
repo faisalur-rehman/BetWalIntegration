@@ -57,11 +57,6 @@ const AdminHeaderBottom = () => {
 
                     <>
                       <li className="nav-item">
-                        <Link className="nav-link" to="add-balance">
-                          Add Balance
-                        </Link>
-                      </li>
-                      <li className="nav-item">
                         <Link className="nav-link" to="file-upload">
                           File Upload
                         </Link>

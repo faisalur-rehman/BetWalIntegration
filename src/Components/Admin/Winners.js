@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { formPostData, formGetData } from "../Api/ApiRequest";
+import Layout from "./Layout";
 
 const Winners = () => {
   const [matches, setMatches] = useState([]);
@@ -28,8 +29,8 @@ const Winners = () => {
         { matchId: target.value },
         sessionStorage.getItem("token")
       );
-      setWinners(data.wonUsers);
-      console.log("winners", data);
+      setWinners(data.wonUser);
+      console.log("winners", data.wonUser);
       setResult(data.message);
       setError("");
     } catch (error) {
@@ -40,42 +41,44 @@ const Winners = () => {
   }
 
   return (
-    <div class="login">
-      <div class="container">
-        <div class="row justify-content-center">
-          <h1>Match Result</h1>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-xl-5 col-lg-5 col-md-6 col-sm-9">
-            <div class="login-form">
-              <label className="label">Select Match</label>
-              <br />
-              <select name="matches" onChange={handleChange}>
-                <option value="select" disabled selected>
-                  Select
-                </option>
-                {matches.map((match) => (
-                  <option value={match._id}>
-                    {match.homeTeam} vs {match.awayTeam}
+    <Layout>
+      <div class="login">
+        <div class="container">
+          <div class="row justify-content-center">
+            <h1>Match Result</h1>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-5 col-md-6 col-sm-9">
+              <div class="login-form">
+                <label className="label">Select Match</label>
+                <br />
+                <select name="matches" onChange={handleChange}>
+                  <option value="select" disabled selected>
+                    Select
                   </option>
-                ))}
-              </select>
-              <br />
-              <br />
-              <div>
-                <ul>
-                  {winners.map((winner) => (
-                    <li>{winner}</li>
+                  {matches.map((match) => (
+                    <option value={match._id}>
+                      {match.homeTeam} vs {match.awayTeam}
+                    </option>
                   ))}
-                </ul>
+                </select>
+                <br />
+                <br />
+                <div>
+                  <ol style={{ color: "white" }}>
+                    {winners.map((winner) => (
+                      <li>{winner.userId.name}</li>
+                    ))}
+                  </ol>
+                </div>
+                {error && <p style={{ color: "red" }}>{error}</p>}
+                {result && <p style={{ color: "red" }}>{result}</p>}
               </div>
-              {error && <p style={{ color: "red" }}>{error}</p>}
-              {result && <p style={{ color: "red" }}>{result}</p>}
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

@@ -32,7 +32,11 @@ const Betslip = () => {
                 <p>
                   Bet Status:{" "}
                   <span style={{ color: "#ffd800" }}>
-                    {bet.iBetWon ? "Won" : "Lost"}
+                    {bet.isBetWon === null
+                      ? "Pending"
+                      : bet.isBetWon === true
+                      ? "Won"
+                      : "Lost"}
                   </span>
                 </p>
                 {bet.awayOdd > 0 && <p>Away Odd: {bet.awayOdd}</p>}
