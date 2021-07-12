@@ -1,5 +1,5 @@
 import Home from "./Components/Home/Home";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import MyBets from "./Components/MyBets/MyBets";
 import Accumulator from "./Components/Accumulator/Accumulator";
 import Special from "./Components/Special/Special";
