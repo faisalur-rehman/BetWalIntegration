@@ -57,7 +57,7 @@ const Winners = () => {
                     Select
                   </option>
                   {matches.map((match) => (
-                    <option value={match._id}>
+                    <option key={match._id} value={match._id}>
                       {match.homeTeam} vs {match.awayTeam}
                     </option>
                   ))}

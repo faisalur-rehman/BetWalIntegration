@@ -27,12 +27,12 @@ const ViewMatchDetail = () => {
     console.log(matchId);
     try {
       const { data } = await formPostData(
-        "/match-result/get",
+        "/won-users/get",
         { matchId },
         sessionStorage.getItem("token")
       );
       console.log("matchData", data);
-      setMatchData(data.matchResult);
+      setMatchData(data);
       setError("");
     } catch (error) {
       console.log(error.response);
@@ -67,35 +67,19 @@ const ViewMatchDetail = () => {
               <br />
               <br />
               <div>
-                {matchData &&
-                  (matchData.isAwayTeamWon ? (
-                    <p style={{ color: "white" }}>Away Team Won</p>
-                  ) : matchData.isHomeTeamWon ? (
-                    <p style={{ color: "white" }}>Home Team Won</p>
-                  ) : (
-                    <p style={{ color: "white" }}>Draw</p>
-                  ))}
-              </div>
-              <div>
-                {matchData &&
-                  (matchData.isBtts ? (
-                    <p style={{ color: "white" }}>Both Team Scored</p>
-                  ) : (
-                    <p style={{ color: "white" }}>Both Team did not score</p>
-                  ))}
-              </div>
-              <div>
-                {matchData &&
-                  (matchData.isOver25 ? (
+                {matchData && (
+                  <>
+                    <p style={{ color: "white" }}>{matchData.message}</p>
                     <p style={{ color: "white" }}>
-                      Both Team Scored 3 goals or more
+                      Bet Return:{" "}
+                      <span style={{ color: "orange" }}>
+                        {matchData.betReturn}
+                      </span>
                     </p>
-                  ) : (
-                    <p style={{ color: "white" }}>
-                      Both Team did not score 3 goals or more
-                    </p>
-                  ))}
+                  </>
+                )}
               </div>
+
               <p style={{ color: "red" }}>{error}</p>
 
               <div>
