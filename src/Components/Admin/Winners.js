@@ -66,9 +66,11 @@ const Winners = () => {
                 <br />
                 <div>
                   <ol style={{ color: "white" }}>
-                    {winners.map((winner) => (
-                      <li>{winner.userId.name}</li>
-                    ))}
+                    {winners.length > 0 ? (
+                      winners.map((winner) => <li>{winner.userId.name}</li>)
+                    ) : (
+                      <p>Nill</p>
+                    )}
                   </ol>
                 </div>
                 {error && <p style={{ color: "red" }}>{error}</p>}
