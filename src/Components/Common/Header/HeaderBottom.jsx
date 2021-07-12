@@ -50,17 +50,6 @@ const HeaderBottom = () => {
                         Home
                       </Link>
                     </li>
-
-                    {/* <li className="nav-item">
-                      <Link className="nav-link" to="/my_bets">
-                        My Bets
-                      </Link>
-                    </li> */}
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/special">
-                        Specials
-                      </Link>
-                    </li>
                     <li className="nav-item">
                       <Link className="nav-link" to="/view-result">
                         Match Result
